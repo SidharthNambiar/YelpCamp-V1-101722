@@ -20,7 +20,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 const campgroundRoute = require("./routes/campgrounds");
 const reviewRoute = require("./routes/reviews");
 const userRoute = require("./routes/users");
@@ -198,6 +198,6 @@ app.use((err, req, res, next) => {
  * Express SERVER on PORT 3000
  */
 
-app.listen(PORT, () => {
-  console.log("Listening on PORT: ", PORT);
+app.listen(port, () => {
+  console.log("Listening on PORT: ", port);
 });
